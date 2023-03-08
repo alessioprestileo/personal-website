@@ -1,4 +1,5 @@
 # Build
+/deploy
 /dist
 /lib
 /lib-types

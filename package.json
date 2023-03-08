@@ -1,9 +1,7 @@
 {
-  "name": "personal-website",
-  "version": "0.0.0",
-  "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "16.x.x",
+    "npm": "8.x.x"
   },
   "scripts": {
     "nx": "nx"
@@ -46,7 +44,6 @@
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
-    "node-fetch": "3.2.10",
     "nx": "15.0.13",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -74,8 +71,10 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "dependencies": {
+    "@builder.io/qwik": "0.15.2",
     "compression": "^1.7.4",
     "express": "4.17.3",
+    "node-fetch": "3.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "web-vitals": "^2.1.4"

@@ -16,11 +16,8 @@
     "isolatedModules": true,
     "outDir": "tmp",
     "noEmit": true,
-    "types": ["node", "vite/client"],
-    "paths": {
-      "~/*": ["./src/*"]
-    }
+    "types": ["node", "vite/client"]
   },
   "files": ["./.eslintrc.cjs"],
-  "include": ["src"]
+  "include": ["src", "scripts"]
 }
