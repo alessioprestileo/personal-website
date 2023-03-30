@@ -5,6 +5,7 @@ import {
   cpSync,
   mkdirSync,
   rmSync,
+  existsSync,
 } from 'fs';
 import { resolve } from 'path';
 
@@ -27,7 +28,9 @@ const generatePackageJson = (): void => {
   };
   newPackage.dependencies = topPackage.dependencies;
 
-  rmSync(resolve('deploy'), { recursive: true });
+  if (existsSync('deploy')) {
+    rmSync(resolve('deploy'), { recursive: true });
+  }
   mkdirSync(resolve('deploy'));
   writeFileSync(resolve('deploy/package.json'), JSON.stringify(newPackage), {});
 };
