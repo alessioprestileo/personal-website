@@ -6,7 +6,7 @@ import Footer from '../components/starter/footer/footer';
 
 export const useServerTimeLoader = routeLoader$(() => {
   return {
-    date: new Date().toISOString(),
+    date: new Date().getFullYear(),
   };
 });
 

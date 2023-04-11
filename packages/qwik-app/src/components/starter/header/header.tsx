@@ -1,29 +1,28 @@
 import { component$ } from '@builder.io/qwik';
-import { QwikLogo } from '../icons/qwik';
 import styles from './header.module.css';
 
 export default component$(() => {
   return (
     <header class={styles.header}>
-      <div class={styles.logo}>
-        <a href="/" title="qwik">
-          <QwikLogo />
+      <div class={styles.home}>
+        <a href="/" title="home">
+          <img src="/Alessio_Prestileo_Resume.jpg" alt="profile-picture" />
         </a>
       </div>
       <ul>
         <li>
-          <a href="https://qwik.builder.io/docs/components/overview/" target="_blank">
-            Docs
+          <a href="/projects" target="_blank">
+            Projects
           </a>
         </li>
         <li>
-          <a href="https://qwik.builder.io/examples/introduction/hello-world/" target="_blank">
-            Examples
+          <a href="/resume" target="_blank">
+            Resume
           </a>
         </li>
         <li>
-          <a href="https://qwik.builder.io/tutorial/welcome/overview/" target="_blank">
-            Tutorials
+          <a href="/contacts" target="_blank">
+            Contacts
           </a>
         </li>
       </ul>

@@ -4,8 +4,10 @@
   padding: 20px 10px 0;
 }
 
-.header .logo a {
-  display: inline-block;
+.header .home a img {
+  max-height: 3rem;
+  border-radius: 100%;
+  aspect-ratio: 1.05;
 }
 
 .header ul {
@@ -29,7 +31,7 @@
 }
 
 .header li a:hover {
-  color: var(--qwik-dark-purple);
+  color: var(--alepweb-dark-purple);
 }
 
 @media (min-width: 450px) {

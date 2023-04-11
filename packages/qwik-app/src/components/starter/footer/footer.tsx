@@ -7,9 +7,14 @@ export default component$(() => {
 
   return (
     <footer>
-      <a href="https://www.builder.io/" target="_blank" class={styles.anchor}>
-        Made with ♡ by Builder.io
+      <a
+        href="https://www.alessioprestileo.com"
+        target="_blank"
+        class={styles.anchor}
+      >
+        Made with ♡ by Alessio Prestileo
         <span class={styles.spacer}>|</span>
+        <span class={styles.copyright}>©</span>
         <span>{serverTime.value.date}</span>
       </a>
     </footer>

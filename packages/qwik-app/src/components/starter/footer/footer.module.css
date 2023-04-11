@@ -1,11 +1,16 @@
 .anchor {
   color: white !important;
-  display: block;
+  display: flex;
   font-size: 0.8rem;
-  text-align: center;
   text-decoration: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .spacer {
   padding: 0 15px;
+}
+
+.copyright {
+  margin-top: 0.11rem;
 }
