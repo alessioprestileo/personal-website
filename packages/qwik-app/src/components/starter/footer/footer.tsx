@@ -6,17 +6,11 @@ export default component$(() => {
   const serverTime = useServerTimeLoader();
 
   return (
-    <footer>
-      <a
-        href="https://www.alessioprestileo.com"
-        target="_blank"
-        class={styles.anchor}
-      >
-        Made with ♡ by Alessio Prestileo
-        <span class={styles.spacer}>|</span>
-        <span class={styles.copyright}>©</span>
-        <span>{serverTime.value.date}</span>
-      </a>
+    <footer class={styles.footer}>
+      Made with ♡ by Alessio Prestileo
+      <span class={styles.spacer}>|</span>
+      <span class={styles.copyright}>©</span>
+      <span>{serverTime.value.date}</span>
     </footer>
   );
 });

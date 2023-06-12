@@ -4,26 +4,22 @@ import styles from './header.module.css';
 export default component$(() => {
   return (
     <header class={styles.header}>
-      <div class={styles.home}>
-        <a href="/" title="home">
-          <img src="/Alessio_Prestileo_Resume.jpg" alt="profile-picture" />
-        </a>
+      <a class={styles.home} href="/" title="home">
+        <img src="/Alessio_Prestileo_Resume.jpg" alt="profile-picture" />
+        <span>Alessio Prestileo</span>
+      </a>
+      <div class={styles.menu}>
+        <span class="material-symbols-outlined">menu</span>
       </div>
       <ul>
         <li>
-          <a href="/projects" target="_blank">
-            Projects
-          </a>
+          <a href="/projects">Projects</a>
         </li>
         <li>
-          <a href="/resume" target="_blank">
-            Resume
-          </a>
+          <a href="/resume">Resume</a>
         </li>
         <li>
-          <a href="/contacts" target="_blank">
-            Contacts
-          </a>
+          <a href="/contacts">Contacts</a>
         </li>
       </ul>
     </header>
