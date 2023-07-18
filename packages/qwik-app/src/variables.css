@@ -1,0 +1,6 @@
+:root {
+  --light-theme-text-color: #555555;
+  --light-theme-button-background: #ffffff;
+  --light-theme-background-gradient: linear-gradient(to right, rgba(246,113,177, .3) , rgba(244,218,127, .5));
+  --base-spacing: 10px;
+}

@@ -1,16 +1,17 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import Home from '../components/home/home';
 
 export default component$(() => {
   return (
     <>
-      <div>HELLO by Alessio</div>
+      <Home />
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: 'Alessio Prestileo',
+  title: 'Alessio Prestileo - Home',
   meta: [
     {
       name: 'description',

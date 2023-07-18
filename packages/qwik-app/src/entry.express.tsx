@@ -45,17 +45,58 @@ const reactDistDir = join(
   '..',
   'public/react-dist'
 );
+const resumeDir = join(
+  fileURLToPath(import.meta.url),
+  '..',
+  '..',
+  'public/resume'
+);
 
 // Static asset handlers
 // https://expressjs.com/en/starter/static-files.html
 app.use(`/build`, express.static(buildDir, { immutable: true, maxAge: '1y' }));
 app.use(express.static(distDir, { redirect: false }));
 app.get('/react', (_req, res) => {
+  res.setHeader(
+    'Cache-Control',
+    'no-store, no-cache, must-revalidate, max-age=0'
+  );
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
   res.sendFile(join(reactDistDir, 'index.html'));
 });
 app.get('/react/*', (_req, res) => {
+  res.setHeader(
+    'Cache-Control',
+    'no-store, no-cache, must-revalidate, max-age=0'
+  );
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
   res.sendFile(join(reactDistDir, 'index.html'));
 });
+app.get('/resume', (_req, res) => {
+  res.setHeader(
+    'Cache-Control',
+    'no-store, no-cache, must-revalidate, max-age=0'
+  );
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  res.sendFile(join(resumeDir, 'index.html'));
+});
+app.get(
+  '/resume/Alessio_Prestileo-Senior_Frontend_Developer_Resume.pdf',
+  (_req, res) => {
+    res.setHeader(
+      'Cache-Control',
+      'no-store, no-cache, must-revalidate, max-age=0'
+    );
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.sendFile(
+      join(resumeDir, 'Alessio_Prestileo-Senior_Frontend_Developer_Resume.pdf')
+    );
+  }
+);
 
 // API routes
 app.get('/api', (_req, res) => {
