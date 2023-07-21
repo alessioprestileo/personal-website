@@ -1,9 +1,8 @@
 @import '../../variables.css';
 
-.main {
+.page {
     height: 100%;
     width: 100%;
-    background-image: var(--light-theme-background-gradient);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

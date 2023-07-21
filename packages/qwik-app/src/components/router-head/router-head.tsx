@@ -17,6 +17,7 @@ export const RouterHead = component$(() => {
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
       <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'></link>
+      <script src="https://kit.fontawesome.com/b3e6089feb.js" crossOrigin="anonymous"></script>
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
       ))}

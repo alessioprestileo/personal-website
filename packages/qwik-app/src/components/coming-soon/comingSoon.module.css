@@ -1,0 +1,47 @@
+@import '../../variables.css';
+
+.page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    position: sticky;
+    top: calc(var(--base-spacing));
+    align-self: flex-start;
+    margin-left: calc(var(--base-spacing));
+    font-weight: bold;
+    font-size: .9rem;
+    color: #fff;
+    background-color: darkseagreen;
+    padding: var(--base-spacing);
+    border-radius: var(--base-spacing);
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.home a {
+    font-weight: bold;
+    font-size: .9rem;
+    color: #fff;
+}
+
+.home:hover {
+    text-decoration: underline;
+}
+
+.home.hidden {
+    opacity: 0;
+}
+
+.content {
+    font-size: xxx-large;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}

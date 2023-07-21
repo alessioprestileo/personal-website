@@ -13,6 +13,11 @@ body {
   margin: 0;
   color: var(--light-theme-text-color);
   font-family: Roboto;
+  background-image: var(--light-theme-background-gradient);
+}
+
+a {
+  text-decoration: none;
 }
 
 .main {

@@ -3,12 +3,12 @@ import { component$ } from '@builder.io/qwik';
 import styles from './home.module.css';
 
 export default component$(() => (
-  <main class={styles.main}>
+  <div class={styles.page}>
     <div class={styles.top}>
       <div class={styles.preTitle}>
         <img
           class={styles.profilePicture}
-          src="/Alessio_Prestileo_Resume.jpg"
+          src="/resume/Alessio_Prestileo_Resume.jpg"
           alt="profile-picture"
         />
         <div>Alessio Prestileo</div>
@@ -16,17 +16,23 @@ export default component$(() => (
       <div class={styles.title}>Software Engineer</div>
     </div>
     <div class={styles.middle}>
-      <a class={styles.button} href="/resume">My resume</a>
-      <a class={styles.button} href="/projects">Projects</a>
-      <a class={styles.button} href="/about-me">About me</a>
+      <a class={styles.button} href="/resume">
+        My resume
+      </a>
+      <a class={styles.button} href="/projects">
+        Projects
+      </a>
+      <a class={styles.button} href="/about-me">
+        About me
+      </a>
     </div>
     <div class={styles.bottom}>
       <div class={styles.bottomText}>
-        <div>Email me at{' '}</div>
+        <div>Email me at </div>
         <a href="mailto:alessioprestileo@gmail.com">
           alessioprestileo@gmail.com
         </a>
-        <div>{' '}or find me here:</div>
+        <div> or find me here:</div>
       </div>
       <div class={styles.findMe}>
         <a href="https://github.com/alessioprestileo">
@@ -52,5 +58,5 @@ export default component$(() => (
         </a>
       </div>
     </div>
-  </main>
+  </div>
 ));

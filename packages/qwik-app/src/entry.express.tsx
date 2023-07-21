@@ -97,6 +97,34 @@ app.get(
     );
   }
 );
+app.get(
+  '/resume/Alessio_Prestileo_Resume.jpg',
+  (_req, res) => {
+    res.setHeader(
+      'Cache-Control',
+      'no-store, no-cache, must-revalidate, max-age=0'
+    );
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.sendFile(
+      join(resumeDir, 'Alessio_Prestileo_Resume.jpg')
+    );
+  }
+);
+app.get(
+  '/resume/scrollScript.js',
+  (_req, res) => {
+    res.setHeader(
+      'Cache-Control',
+      'no-store, no-cache, must-revalidate, max-age=0'
+    );
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.sendFile(
+      join(resumeDir, 'scrollScript.js')
+    );
+  }
+);
 
 // API routes
 app.get('/api', (_req, res) => {
