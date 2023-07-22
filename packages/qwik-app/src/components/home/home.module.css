@@ -27,9 +27,17 @@
 }
 
 .profilePicture {
+    display: grid;
+    align-items: center;
     height: 2rem;
-    border-radius: 100%;
+    width: 2rem;
     margin-right: var(--base-spacing);
+}
+
+.profilePicture img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
 }
 
 .middle {
@@ -110,6 +118,7 @@
     
     .profilePicture {
         height: 4rem;
+        width: 4rem;
     }
 
     .bottomText {
@@ -131,6 +140,7 @@
 
     .profilePicture {
         height: 5rem;
+        width: 5rem;
     }
 
     .button {
