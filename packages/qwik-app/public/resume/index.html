@@ -45,7 +45,8 @@
     }
 
     p {
-      margin: calc(1.25 * var(--base-spacing)) calc(1.25 * var(--base-spacing));
+      margin: 0;
+      padding: calc(1.25 * var(--base-spacing)) calc(1.25 * var(--base-spacing));
     }
 
     a {
@@ -88,6 +89,10 @@
 
     header.hidden {
       opacity: 0;
+    }
+
+    section#profile {
+      margin-bottom: 12px;
     }
 
     section#profile>p {
@@ -147,7 +152,6 @@
     }
 
     .experience-and-skills {
-      padding-top: var(--base-spacing);
       display: grid;
       grid-template-columns: 1.25fr 2fr;
       grid-template-rows: repeat(2, 1fr);
@@ -196,7 +200,7 @@
     }
 
     .skills-category {
-      box-shadow: 0px 0px 10px 0px var(--color-border);
+      box-shadow: 0px 0px 4px 0px var(--color-border);
       padding: calc(0.5 * var(--base-spacing));
       margin-top: calc(1 * var(--base-spacing));
       width: 195px;
@@ -468,19 +472,22 @@
 
       .skills-category,
       .work-experience-item {
+        box-shadow: none;
+        border: 2px solid #E8E8E8;
         background-color: white;
       }
 
       .experience-and-skills {
-        grid-template-columns: 1.5fr 2fr;
+        grid-template-columns: 1.4fr 2fr;
       }
+    }
   </style>
 </head>
 
 <body>
   <header id="header">
     <a id="home" class="home" href="/"><i class="fas fa-chevron-left"></i> HOME</a>
-    <a id="download" class="download" href="/resume/Alessio_Prestileo-Senior_Frontend_Developer_Resume.pdf">DOWNLOAD</a>
+    <a id="download" class="download" href="/resume/Alessio_Prestileo-Senior_Frontend_Engineer_Resume.pdf">DOWNLOAD</a>
   </header>
   <main>
     <div class="container-2-col portrait-reverse align-center">

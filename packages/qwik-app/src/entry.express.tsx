@@ -84,7 +84,7 @@ app.get('/resume', (_req, res) => {
   res.sendFile(join(resumeDir, 'index.html'));
 });
 app.get(
-  '/resume/Alessio_Prestileo-Senior_Frontend_Developer_Resume.pdf',
+  '/resume/Alessio_Prestileo-Senior_Frontend_Engineer_Resume.pdf',
   (_req, res) => {
     res.setHeader(
       'Cache-Control',
@@ -93,7 +93,7 @@ app.get(
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
     res.sendFile(
-      join(resumeDir, 'Alessio_Prestileo-Senior_Frontend_Developer_Resume.pdf')
+      join(resumeDir, 'Alessio_Prestileo-Senior_Frontend_Engineer_Resume.pdf')
     );
   }
 );
