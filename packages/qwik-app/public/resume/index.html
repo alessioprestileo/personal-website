@@ -2,52 +2,83 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 
 <head>
-  <title>Alessio Prestileo - Senior Frontend Developer Resume</title>
+  <title>Alessio Prestileo</title>
+  <meta name="description" content="Senior Frontend Engineer - Resume">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <script src="https://kit.fontawesome.com/b3e6089feb.js" crossorigin="anonymous"></script>
 
   <style type="text/css">
     body {
-      --spacing-xs: 5px;
-      --spacing-s: 8px;
-      --spacing-m: 20px;
+      --base-spacing: 10px;
       --color-text: #4d4d4d;
       --color-border: #A0A0A0;
+      --color-green: #1fad1f;
+      --color-orange: #d99126;
+      --color-red: #d94a26;
       font-family: Arial, sans-serif;
-      line-height: 1.8rem;
-      display: flex;
-      flex-direction: column;
       margin: 0;
-      padding: var(--spacing-m);
-      align-items: center;
       color: var(--color-text);
       background-image: linear-gradient(to right, rgba(246, 113, 177, .3), rgba(244, 218, 127, .5));
-    }
-
-    body * {
-      margin: 0;
-      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     main {
-      width: 100%;
       max-width: 1200px;
-      padding: var(--spacing-s) 0;
+      height: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    ul {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+      line-height: 1.75rem;
+    }
+
+    p {
+      margin: calc(1.25 * var(--base-spacing)) calc(1.25 * var(--base-spacing));
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+      padding-inline-start: 0px;
+    }
+
+    header {
+      background-color: white;
+      background-image: linear-gradient(to right, rgba(246, 113, 177, .3), rgba(244, 218, 127, .5));
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 10;
+      opacity: 1;
+      transition: opacity 0.3s linear;
+      top: 0;
+      position: sticky;
+      box-shadow: 0px 3px 7px -4px var(--color-border);
     }
 
     .home,
     .download {
-      position: sticky;
-      top: 108px;
+      color: var(--color-text);
       font-weight: bold;
-      font-size: .9rem;
-      color: #fff;
-      background-color: darkseagreen;
-      padding: var(--spacing-s);
-      border-radius: var(--spacing-s);
-      z-index: 10;
-      opacity: 1;
-      transition: opacity 0.5s linear;
+      font-size: .8rem;
+      padding: var(--base-spacing);
     }
 
     .home:hover,
@@ -55,107 +86,20 @@
       text-decoration: underline;
     }
 
-    .home.hidden,
-    .download.hidden {
+    header.hidden {
       opacity: 0;
     }
 
-    .home {
-      right: 100%
-    }
-
-    .download {
-      left: 100%
-    }
-
-    .title-container {
-      display: flex;
-      padding: var(--spacing-s) 0;
-      margin-top: -40px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    h1 {
-      font-size: 1.75rem;
-      white-space: nowrap;
-    }
-
-    h2 {
-      font-size: 1.15rem;
-      margin-top: var(--spacing-s);
-    }
-
-    h3 {
-      font-size: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    a {
-      color: #0563c1;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style-type: none;
-      display: table;
-    }
-
-    ul li {
-      display: table-row;
-    }
-
-    ul li:before {
-      content: '- ';
-      display: table-cell;
-      padding: 0 1rem;
-    }
-
-    .cols-2 {
-      display: flex;
-      justify-content: space-between;
+    section#profile>p {
+      text-align: justify;
     }
 
     section#general-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      padding-top: calc(1.5 * var(--base-spacing));
     }
 
-    .personal-data-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      flex-direction: column;
-    }
-
-    .personal-data-left,
-    .personal-data-right,
-    .address {
+    .title-container {
       text-align: center;
-    }
-
-    .address {
-      width: 100%;
-    }
-
-    .personal-data-left,
-    .personal-data-right,
-    .profile-picture-container {
-      flex-grow: 1;
-    }
-
-    .profile-picture-container,
-    .personal-data-left {
-      padding-right: var(--spacing-m);
-    }
-
-    .personal-data-left {
-      white-space: nowrap;
     }
 
     .profile-picture-container {
@@ -170,7 +114,7 @@
       position: relative;
       width: 90px;
       height: 84px;
-      margin-top: var(--spacing-s);
+      margin-top: var(--base-spacing);
     }
 
     img.profile-picture::before {
@@ -179,101 +123,331 @@
       left: 25%;
     }
 
-    section#work-experience h2 {
-      padding-bottom: var(--spacing-s);
+    .personal-data,
+    .personal-links {
+      line-height: 1.5rem;
+      text-align: left;
+    }
+
+    .container-2-col {
+      display: flex;
+      justify-content: center;
+    }
+
+    .container-2-col.align-center {
+      align-items: center;
+    }
+
+    .container-2-col>.right {
+      padding-left: calc(2 * var(--base-spacing));
+    }
+
+    .container-2-col>.left {
+      padding-right: calc(2 * var(--base-spacing));
+    }
+
+    .experience-and-skills {
+      padding-top: var(--base-spacing);
+      display: grid;
+      grid-template-columns: 1.25fr 2fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-auto-flow: column;
+    }
+
+    .experience-and-skills>.left-top,
+    .experience-and-skills>.left-bottom {
+      padding-right: calc(2 * var(--base-spacing));
+    }
+
+    .experience-and-skills>.left-top {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .experience-and-skills>.left-bottom {
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+    .experience-and-skills>.right {
+      padding-left: calc(2 * var(--base-spacing));
+      border-left: 1px solid var(--color-border);
+      grid-row: 1 / 3;
+      grid-column: 2;
+    }
+
+    section#skills {
+      margin-bottom: calc(1.5 * var(--base-spacing));
+    }
+
+    .skills-list {
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      flex-direction: column;
+      max-height: 600px;
+      align-items: center;
+    }
+
+    .skills-category-name {
+      text-align: center;
+      margin: 0;
+    }
+
+    .skills-category {
+      box-shadow: 0px 0px 10px 0px var(--color-border);
+      padding: calc(0.5 * var(--base-spacing));
+      margin-top: calc(1 * var(--base-spacing));
+      width: 195px;
+      background-color: #fcede8;
+    }
+
+    .skills-item {
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: var(--base-spacing);
+    }
+
+    .skills-item .square {
+      height: 12px;
+      width: 12px;
+      background-color: var(--color-border);
+      border-radius: 4px;
+      margin: 2px;
+    }
+
+    [class^="skills-item-level"] {
+      display: flex;
+    }
+
+    .skills-item-level-5 {
+
+      .sq1,
+      .sq2,
+      .sq3,
+      .sq4,
+      .sq5 {
+        background-color: var(--color-green);
+      }
+    }
+
+    .skills-item-level-4 {
+
+      .sq1,
+      .sq2,
+      .sq3,
+      .sq4 {
+        background-color: var(--color-green);
+      }
+    }
+
+    .skills-item-level-3 {
+
+      .sq1,
+      .sq2,
+      .sq3 {
+        background-color: var(--color-orange);
+      }
+    }
+
+    .skills-item-level-2 {
+
+      .sq1,
+      .sq2 {
+        background-color: var(--color-orange);
+      }
+    }
+
+    .skills-item-level-1 {
+      .sq1 {
+        background-color: var(--color-red);
+      }
     }
 
     .work-experience-item {
-      padding-bottom: var(--spacing-m);
+      margin: calc(1 * var(--base-spacing));
+      padding: calc(1 * var(--base-spacing));
+      box-shadow: 0px 0px 13px -5px var(--color-border);
+      background-color: #fcf4e8;
     }
 
-    .work-experience-item .employer {
-      background-color: #F5F5F5;
-      padding: var(--spacing-s) var(--spacing-m);
+    .employer {
+      padding-bottom: var(--base-spacing);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .employer .line-1,
+    .employer .line-2 {
+      display: flex;
+      justify-content: space-between;
+      padding: calc(0.5 * var(--base-spacing));
+    }
+
+    .employer-name>i,
+    .dates>i,
+    .location>i {
+      padding-right: calc(0.25 * var(--base-spacing));
+    }
+
+    ul.achievements {
+      padding-left: calc(1.5 * var(--base-spacing));
+    }
+
+    section#individual-learning>.title {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: var(--spacing-s);
-    }
-
-    .work-experience-item .employer .dates {
-      display: flex;
-      flex-wrap: wrap;
-      text-align: right;
-      justify-content: flex-end;
-    }
-
-    section .title {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
       border-bottom: 1px solid var(--color-border);
-      margin-bottom: var(--spacing-s);
     }
 
-    .education-item {
+    section#individual-learning>.title>h2 {
+      border-bottom: none;
+    }
+
+    section#individual-learning>ul,
+    section#education>ul {
+      padding: calc(1 * var(--base-spacing));
+    }
+
+    ul.achievements li:not(:last-child),
+    section#individual-learning>ul>li:not(:last-child),
+    section#education>ul>li:not(:last-child) {
+      margin-bottom: calc(1 * var(--base-spacing));
+    }
+
+    ul.achievements li,
+    section#individual-learning>ul>li,
+    section#education>ul>li {
+      position: relative;
+      padding-left: calc(2.5 * var(--base-spacing));
+    }
+
+    ul.achievements li::before,
+    section#individual-learning>ul>li::before,
+    section#education>ul>li::before {
+      content: "\f08d";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0.35rem;
+      top: 0.25rem;
+      font-size: 0.7rem;
+    }
+
+    .education-item>.details {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: var(--spacing-xs);
-      padding-top: 0;
     }
 
-    .education-item~.education-item {
-      padding: var(--spacing-xs);
+    .education-item>.details>.location {
+      margin-left: calc(2 * var(--base-spacing));
     }
 
-    .education-item~.education-item {
-      border-top: 1px dashed var(--color-border);
-    }
-
-    section#language-skills .content {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .skill-level {
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1300px),
+    screen and (orientation: portrait) {
       html {
-        font-size: 13px;
+        font-size: 24px;
       }
 
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .personal-data-left {
-        white-space: normal;
-      }
-
-      .cols-2 {
-        flex-direction: column;
-      }
-    }
-
-    @media screen and (min-width: 900px) {
-
-      .home,
-      .download {
-        top: 25px;
+      main {
+        margin: calc(2 * var(--base-spacing));
       }
 
       section#general-info {
-        padding: var(--spacing-m);
+        padding-top: 0;
       }
 
-      .personal-data-container {
+      li,
+      section#profile>p {
+        line-height: 1.25;
+      }
+      .container-2-col {
+        flex-direction: column;
+      }
+
+      .container-2-col>.right {
+        padding-left: 0;
+      }
+
+      .container-2-col.portrait-reverse {
+        flex-direction: column-reverse;
+      }
+
+      .personal-data,
+      .personal-links {
+        text-align: center;
+      }
+
+      .experience-and-skills {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .experience-and-skills>.left-top,
+      .experience-and-skills>.left-bottom {
+        padding-right: 0;
+      }
+
+      .experience-and-skills>.right {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
         flex-direction: row;
+        align-items: flex-start;
       }
 
-      .personal-data-left,
-      .personal-data-right,
-      .address {
-        text-align: left;
+      .skills-category {
+        width: 260px;
+      }
+
+      .skills-item {
+        margin-left: calc(2 * var(--base-spacing));
+        margin-right: calc(2 * var(--base-spacing));
+      }
+
+      .work-experience-item {
+        padding: calc(1.5 * var(--base-spacing));
+      }
+
+      .employer {
+        padding-bottom: calc(1.5 * var(--base-spacing));
+      }
+
+      .employer-name,
+      .dates,
+      .location {
+        display: flex;
+        align-items: center;
+      }
+
+      .employer-name>i,
+      .dates>i,
+      .location>i {
+        padding-right: calc(1 * var(--base-spacing));
+        font-size: 0.75rem;
+      }
+
+      ul.achievements li::before,
+      section#individual-learning>ul>li::before,
+      section#education>ul>li::before {
+        left: 0.3rem;
+        top: 0.3rem;
+        font-size: 0.6rem;
+      }
+
+      ul.achievements li,
+      section#individual-learning>ul>li,
+      section#education>ul>li {
+        padding-left: calc(3.5 * var(--base-spacing));
       }
     }
 
@@ -288,266 +462,641 @@
         background-image: none;
       }
 
-      .home,
-      .download {
+      header {
         display: none;
       }
 
-      .title-container {
-        padding-top: 0;
-        margin-top: 0;
-        margin-bottom: var(--spacing-m);
+      .skills-category,
+      .work-experience-item {
+        background-color: white;
       }
 
-      .personal-data-container {
-        flex-direction: row;
+      .experience-and-skills {
+        grid-template-columns: 1.5fr 2fr;
       }
-
-      .personal-data-left,
-      .personal-data-right,
-      .address {
-        text-align: left;
-      }
-
-      .profile-picture-container {
-        justify-content: flex-end;
-      }
-
-      section#general-info {
-        margin-bottom: calc(-1 * var(--spacing-m));
-      }
-    }
   </style>
 </head>
 
 <body>
-  <main>
+  <header id="header">
     <a id="home" class="home" href="/"><i class="fas fa-chevron-left"></i> HOME</a>
     <a id="download" class="download" href="/resume/Alessio_Prestileo-Senior_Frontend_Developer_Resume.pdf">DOWNLOAD</a>
-    <div class="title-container">
-      <h1>Senior Frontend Developer:</h1>
-      <h1>&nbsp;Alessio Prestileo</h1>
-    </div>
-    <section id="general-info">
-      <div class="personal-data-container">
+  </header>
+  <main>
+    <div class="container-2-col portrait-reverse align-center">
+      <div class="left">
         <div class="profile-picture-container">
           <img class="profile-picture" alt="avatar" src="/resume/Alessio_Prestileo_Resume.jpg" />
         </div>
-        <div class="personal-data-left">
-          <strong>E-mail:</strong> <a href="mailto:alessioprestileo@gmail.com">alessioprestileo@gmail.com</a><br />
-          <strong>LinkedIn:</strong> <a
-            href="https://no.linkedin.com/in/alessioprestileoalep">https://no.linkedin.com/in/alessioprestileoalep</a><br />
-          <strong>GitHub:</strong> <a
-            href="https://github.com/alessioprestileo">https://github.com/alessioprestileo</a><br />
-          <strong>Website:</strong> <a href="https://alessioprestileo.com">https://alessioprestileo.com</a>
-        </div>
-        <div class="personal-data-right">
-          <strong>Date of birth:</strong> 07-20-1986<br />
-          <strong>Nationality:</strong> Italy<br />
-          <strong>Mobile:</strong> +1 458 600 4103<br />
-          <strong>Address:</strong> 3752 SW Tommy Armour Lane, Redmond, OR 97756, United States<br />
+      </div>
+      <div class="right">
+        <div class="title-container">
+          <h1 class="fulll-name">Alessio Prestileo</h1>
+          <h3 class="job-title">Senior Frontend Engineer</h3>
         </div>
       </div>
-    </section>
-    <section id="summary">
-      <h2>Summary</h2>
-      <p>
-        Highly experienced Senior Frontend Developer with a strong background in software architecture and engineering.
-        Proven
-        track record of success in developing and maintaining web and mobile applications using a variety of languages
-        and
-        frameworks. Excellent problem-solving skills, attention to detail, and ability to mentor and review code for
-        less
-        experienced developers.
-      </p>
-      <p>
-        Here's what my team lead has to say about me:
-      <ul>
-        <li><q>I know I can give you just about any task, and you will find a great solution to it.</q></li>
-        <li><q>You have been vital to the team's success.</q></li>
-        <li><q>Your bandwidth is impressive.</q></li>
-      </ul>
-      </p>
-    </section>
-    <section id="technical-skills">
-      <h2>Skills</h2>
-      <div class="cols-2">
-        <ul class="left">
-          <li>Extensive knowledge of TypeScript and very strong interest in static typing.</li>
-          <li>Extensive knowledge of JavaScript, HTML, CSS.</li>
-          <li>Solid experience in reviewing code and tutoring less experienced developers.</li>
-        </ul>
-        <ul class="right">
-          <li>Strong focus on writing clean, readable and maintainable code.</li>
-          <li>Productive in any JavaScript/TypeScript framework.</li>
-          <li>Solid understanding of software architecture principles and design patterns.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="work-experience">
-      <h2>Work Experience</h2>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div>
-            <h3>Senior Frontend Developer at <a href="https://www.forsta.com">Forsta AS</a> (formerly Confirmit AS)
-            </h3>
-            <i>Oslo, Norway and remote, US</i>
+    </div>
+    <section id="general-info">
+      <div class="container-2-col">
+        <div class="left">
+          <div class="personal-links">
+            <div>
+              <strong>LinkedIn:</strong>&nbsp;<a
+                href="https://linkedin.com/in/alessioprestileoalep">https://linkedin.com/in/alessioprestileoalep</a>
+            </div>
+            <div>
+              <strong>GitHub:</strong> <a
+                href="https://github.com/alessioprestileo">https://github.com/alessioprestileo</a>
+            </div>
+            <div>
+              <strong>Website:</strong> <a href="https://alessioprestileo.com">https://alessioprestileo.com</a>
+            </div>
           </div>
-          <div class="dates"><i>Jun 2020 -</i><i>&nbsp;Present</i></div>
         </div>
-        <div class="activities">
-          <ul>
-            <li>Acted as main contact for any TypeScript-related questions within the company.</li>
-            <li>Improved type safety on a 500k lines TypeScript codebase through large-scale refactorings, practically
-              eliminating
-              runtime errors.</li>
-            <li>Contributed to new features by writing implementation, unit tests and e2e tests.</li>
-            <li>Spent ~20% of working time reviewing pull requests from other developers.</li>
-            <li>Solved a variety of urgent bugs reported by users, as well as well known problems caused by poor
-              architecture.</li>
-            <li>Significantly improved deployment pipeline built with TeamCity (increased automation, reduced
-              build time).
+        <div class="right">
+          <div class="personal-data">
+            <div>
+              <strong>E-mail:</strong>&nbsp;<a href="mailto:alessioprestileo@gmail.com">alessioprestileo@gmail.com</a>
+            </div>
+            <div>
+              <strong>Mobile:</strong> +1 458 600 4103
+            </div>
+            <div>
+              <strong>Location:</strong> Redmond, OR 97756, USA
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="profile">
+      <h2>Profile</h2>
+      <p>
+        Senior Software Engineer with 8 years of professional experience and deep expertise in software architecture.
+        Proven track record in developing and maintaining web and mobile applications using a variety of languages and
+        frameworks.
+        Excellent problem-solving skills and meticulous attention to detail. Exceptional ability to review code and
+        mentor less experienced developers.
+      </p>
+    </section>
+    <div class="experience-and-skills">
+      <div class="left-top">
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul class="skills-list">
+            <li class="skills-category">
+              <h4 class="skills-category-name">Programming skills</h4>
+              <ul>
+                <li class="skills-item">
+                  <div class="skills-item-name">Clean code</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Refactoring</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Debuggging</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Testing</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Monorepo</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+              </ul>
             </li>
-            <li>Collaborated with UI/UX experts to enhance user experience and contributed to development and
-              maintenance of a company-wide design system.</li>
-            <li>Played a key role in technical interviews for hiring of new frontend developers (~50 candidates assessed
-              in 2022, 12 candidates hired).</li>
-            <li>Significantly improved developer experience by developing coding conventions and internal tooling.</li>
-            <li>Contributed to the development and maintenance of an internal design system counting ~50 UI components.
+            <li class="skills-category">
+              <h4 class="skills-category-name">Programming Languages</h4>
+              <ul>
+                <li class="skills-item">
+                  <div class="skills-item-name">TypeScript</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">HTML, CSS, JS</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Python</div>
+                  <div class="skills-item-level-3">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">C++</div>
+                  <div class="skills-item-level-3">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Haskell</div>
+                  <div class="skills-item-level-3">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">SQL</div>
+                  <div class="skills-item-level-2">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+              </ul>
             </li>
-            <li>Assumed leadership in overseeing and delivering impactful, large-scale projects, collaborating with
-              cross-functional
-              teams of developers spanning diverse areas of expertise.</li>
+            <li class="skills-category">
+              <h4 class="skills-category-name">Personal Skills</h4>
+              <ul>
+                <li class="skills-item">
+                  <div class="skills-item-name">Mentoring</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Reliability</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Receptiveness</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Collaboration</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="skills-category">
+              <h4 class="skills-category-name">Frameworks & Libraries</h4>
+              <ul>
+                <li class="skills-item">
+                  <div class="skills-item-name">React</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Redux</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">NodeJS</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">npm</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Webpack</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">React Native</div>
+                  <div class="skills-item-level-3">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Angular</div>
+                  <div class="skills-item-level-3">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="skills-category">
+              <h4 class="skills-category-name">Other tools</h4>
+              <ul>
+                <li class="skills-item">
+                  <div class="skills-item-name">Git</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Jira</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="skills-category">
+              <h4 class="skills-category-name">Natural Languages</h4>
+              <ul>
+                <li class="skills-item">
+                  <div class="skills-item-name">English</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Italian</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Norwegian</div>
+                  <div class="skills-item-level-5">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Portuguese</div>
+                  <div class="skills-item-level-4">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="skills-item-name">Spanish</div>
+                  <div class="skills-item-level-3">
+                    <div class="square sq1"></div>
+                    <div class="square sq2"></div>
+                    <div class="square sq3"></div>
+                    <div class="square sq4"></div>
+                    <div class="square sq5"></div>
+                  </div>
+                </li>
+              </ul>
+            </li>
           </ul>
-        </div>
+        </section>
       </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div>
-            <h3>System Developer at <a href="https://www.zirius.no">Zirius AS</a></h3>
-            <div>Oslo, Norway</div>
+      <div class="right">
+        <section id="work-experience" class="work-experience">
+          <h2>Work Experience</h2>
+          <div class="work-experience-item">
+            <div class="employer">
+              <div class="left">
+                <div class="line-1">
+                  <h3>Senior Software Engineer</h3>
+                </div>
+                <div class="line-2">
+                  <div class="location">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Oslo, Norway and remote, US</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="line-1">
+                  <div class="dates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>2020-Present</span>
+                  </div>
+                </div>
+                <div class="line-2">
+                  <div class="employer-name">
+                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                    <span><a href="https://www.forsta.com">Forsta AS</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="achievements">
+              <li>Main contact for TypeScript within the company.</li>
+              <li>Practically eliminated runtime errors on 500k lines codebase by improving types.</li>
+              <li>Contributed to new features by writing implementation, unit tests and e2e tests.</li>
+              <li>Spent ~20% of time reviewing pull requests from other developers.</li>
+              <li>Solved a variety of urgent bugs reported by users, as well as well known problems caused by poor
+                architecture.</li>
+              <li>Significantly improved deployment pipeline built with TeamCity (increased automation, reduced
+                build time).
+              </li>
+              <li>Collaborated with UI/UX experts to enhance user experience and contributed to development and
+                maintenance of a company-wide design system.</li>
+              <li>Key role in technical interviews for prospective candidates (~50 candidates
+                assessed
+                in 2022, 12 candidates hired).</li>
+              <li>Significantly improved developer experience by developing coding conventions and internal tooling.
+              </li>
+              <li>Contributed to the development and maintenance of an internal design system counting ~50 UI
+                components.
+              </li>
+              <li>Assumed leadership in overseeing and delivering impactful, large-scale projects, collaborating
+                with
+                cross-functional
+                teams of developers spanning diverse areas of expertise.</li>
+            </ul>
           </div>
-          <div class="dates"><i>Jun 2018 -</i><i>&nbsp;May 2020</i></div>
-        </div>
-        <ul>
-          <li>Developed an ERP web application and an expense claim mobile app using React, React-Native and TypeScript.
-          </li>
-          <li>Created and maintained npm packages for internal use and developed coding conventions.</li>
-          <li>Created a deployment pipeline using Jenkins.</li>
-          <li>Implemented OAuth 2.0 authentication for web and mobile clients and contributed to definition of backend
-            APIs using Swagger.</li>
-          <li>Assumed the role of frontend lead, mentoring and performing code reviews for less experienced developers.
-          </li>
-          <li>Performed interviews, created tests and home assignments to assess new frontend developers.</li>
-        </ul>
-      </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div>
-            <h3>System Developer at <a href="https://www.cgi.com">Acando AS (now CGI)</a></h3>
-            <div>Oslo, Norway</div>
+          <div class="work-experience-item">
+            <div class="employer">
+              <div class="left">
+                <div class="line-1">
+                  <h3>Senior Software Engineer</h3>
+                </div>
+                <div class="line-2">
+                  <div class="location">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Oslo, Norway</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="line-1">
+                  <div class="dates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>2018-2020</span>
+                  </div>
+                </div>
+                <div class="line-2">
+                  <div class="employer-name">
+                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                    <span><a href="https://www.zirius.no">Zirius AS</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="achievements">
+              <li>Developed an ERP web application and an expense claim mobile app.</li>
+              <li>Created and maintained design system implementation and developed coding conventions.</li>
+              <li>Created and maintained deployment pipeline.</li>
+              <li>Implemented OAuth 2.0 authentication for web and mobile clients.</li>
+              <li>Assumed the role of frontend lead, mentoring and performing code reviews for less experienced
+                developers.
+              </li>
+              <li>Conducted interviews, created tests and home assignments to assess prospective candidates.</li>
+            </ul>
           </div>
-          <div class="dates"><i>Feb 2018 -</i><i>&nbsp;May 2018</i></div>
-        </div>
-        <ul>
-          <li>Built the frontend of a web application for <a href="https://boneprox.com">Boneprox</a>, using React,
-            Redux,
-            and Flow.</li>
-        </ul>
-      </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div>
-            <h3>System Developer at <a href="https://07.no/digital">07 Media AS</a></h3>
-            <div>Oslo, Norway</div>
+          <div class="work-experience-item">
+            <div class="employer">
+              <div class="left">
+                <div class="line-1">
+                  <h3>Software Engineer</h3>
+                </div>
+                <div class="line-2">
+                  <div class="location">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Oslo, Norway</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="line-1">
+                  <div class="dates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>2017-2018</span>
+                  </div>
+                </div>
+                <div class="line-2">
+                  <div class="employer-name">
+                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                    <span><a href="https://07.no/digital">07 Media AS</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="achievements">
+              <li>
+                Developed and maintained websites using Drupal and Wordpress on the backend, Angular and Vue on the
+                frontend.
+              </li>
+              <li>
+                Key contributor to the development and maintenance <a href="https://speiding.no">speiding.no</a> and
+                <a href="https://norsktradisjonsmat.no">tradisjonsmat.no</a>
+              </li>
+            </ul>
           </div>
-          <div class="dates"><i>Jan 2017 -</i><i>&nbsp;Jan 2018</i></div>
-        </div>
-        <ul>
-          <li>
-            Developed and maintained websites using Drupal and Wordpress on the backend, Angular and Vue on the
-            frontend.
-          </li>
-          <li>
-            Key contributor to the development and maintenance <a href="https://speiding.no">speiding.no</a> and <a
-              href="https://norsktradisjonsmat.no">tradisjonsmat.no</a>
-          </li>
-        </ul>
-      </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div>
-            <h3>Structural Engineer at <a href="https://www.dnv.com">DNV</a></h3>
-            <div>Oslo, Norway</div>
+          <div class="work-experience-item">
+            <div class="employer">
+              <div class="left">
+                <div class="line-1">
+                  <h3>Structural Engineer</h3>
+                </div>
+                <div class="line-2">
+                  <div class="location">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Oslo, Norway</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="line-1">
+                  <div class="dates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>2011-2016</span>
+                  </div>
+                </div>
+                <div class="line-2">
+                  <div class="employer-name">
+                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                    <span><a href="https://www.dnv.com">DNV</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="achievements">
+              <li>
+                Performed non-linear FE calculations to assess the ultimate strength of marine
+                structures.
+              </li>
+              <li>
+                Developed customized features for engineering applications using Python and C++.
+              </li>
+            </ul>
           </div>
-          <div class="dates"><i>Sep 2011 -</i><i>&nbsp;Jan 2016</i></div>
-        </div>
-        <ul>
-          <li>
-            Performed advanced analysis (non-linear FE analysis) to assess the ultimate strength of marine structures.
-          </li>
-          <li>
-            Developed customized features for engineering applications using Python and C++.
-          </li>
-        </ul>
+        </section>
       </div>
-    </section>
-    <section id="independent-study">
-      <div class="title">
-        <h2>Independent Study</h2>
-        <div class="dates"><i>Jan 2016 -</i><i>&nbsp;Present</i></div>
-      </div>
-      <ul>
-        <li>In-depth study of strongly typed functional languages: Haskell, PureScript and Elm.</li>
-        <li>Completed “Master Class in Software Architecture” course taught by “Uncle Bob”
-          Martin.</li>
-        <li>Explored the fundamentals of 3D graphics in OpenGL.</li>
-        <li>Studied of C and C++ with advanced use of pointers, templates and polymorphism.</li>
-      </ul>
-      </div>
-    </section>
-    <section id="education">
-      <div class="title">
-        <h2>Education</h2>
-      </div>
-      <div class="education-item">
-        <div class="degree">
-          <div class="description">
-            Master's degree: Naval Architecture and Marine Engineering
+      <div class="left-bottom">
+        <section id="individual-learning">
+          <div class="title">
+            <h2>Individual Learning</h2>
+            <div class="dates">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <span>2016-Present</span>
+            </div>
           </div>
-          <i class="location">University of Genova, Italy</i>
-        </div>
-        <i class="date">Mar 2011</i>
-      </div>
-      <div class="education-item">
-        <div class="degree">
-          <div class="description">
-            Bachelor's degree: Naval Architecture and Marine Engineering
+          <ul>
+            <li>Strongly typed functional languages: Haskell, PureScript and Elm.</li>
+            <li>“Master Class in Software Architecture” course taught by “Uncle Bob”
+              Martin.</li>
+            <li>Fundamentals of 3D graphics in OpenGL.</li>
+            <li>Advanced use of pointers, templates and polymorphism in C++.</li>
+          </ul>
+        </section>
+        <section id="education">
+          <div class="title">
+            <h2>Education</h2>
           </div>
-          <i class="location">University of Genova, Italy</i>
-        </div>
-        <i class="date">Oct 2008</i>
+          <ul>
+            <li>
+              <div class="education-item">
+                <div class="description">M.S. Naval Architecture and Marine Engineering</div>
+                <div class="details">
+                  <div class="dates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>2011</span>
+                  </div>
+                  <div class="location">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>University of Genoa, Italy</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="education-item">
+                <div class="description">B.S. Naval Architecture and Marine Engineering</div>
+                <div class="details">
+                  <div class="dates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>2008</span>
+                  </div>
+                  <div class="location">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>University of Genoa, Italy</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
-    </section>
-    <section id="language-skills">
-      <div class="title">
-        <h2>Language Skills</h2>
-      </div>
-      <div class="content">
-        <div class="skill-level">
-          <div><strong>Native</strong></div>
-          <div>Italian</div>
-        </div>
-        <div class="skill-level">
-          <div><strong>Proficient</strong></div>
-          <div>English, Norwegian, Portuguese, Spanish</div>
-        </div>
-        <div class="skill-level">
-          <div><strong>Beginner</strong></div>
-          <div>French</div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
   <script src="/resume/scrollScript.js"></script>
 </body>

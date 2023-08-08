@@ -1,7 +1,6 @@
 (function toggleDownloadElement() {
   let lastScrollTop = 0;
-  const downloadElement = document.getElementById('download');
-  const homeElement = document.getElementById('home');
+  const headerElement = document.getElementById('header');
   let ticking = false;
 
   window.addEventListener('scroll', function () {
@@ -25,12 +24,10 @@
 
     if (currentScrollTop > lastScrollTop) {
       // scrolling down
-      homeElement.classList.add('hidden');
-      downloadElement.classList.add('hidden');
+      headerElement.classList.add('hidden');
     } else {
       // scrolling up
-      homeElement.classList.remove('hidden');
-      downloadElement.classList.remove('hidden');
+      headerElement.classList.remove('hidden');
     }
 
     lastScrollTop = currentScrollTop;
