@@ -92,7 +92,8 @@
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
-    margin: calc(var(--base-spacing) * 2) 0;
+    margin-top: calc(var(--base-spacing) * 2) 0;
+    margin-bottom: 5vh;
 }
 
 .findMePicture {
