@@ -38,7 +38,7 @@ export default component$(() => (
         <div> or find me here:</div>
       </div>
       <div class={styles.findMe}>
-        <a href="https://github.com/alessioprestileo">
+        <a href="https://github.com/alessioprestileo" target="_blank">
           <img
             class={styles.findMePicture}
             src="/github-mark.svg"
@@ -47,7 +47,7 @@ export default component$(() => (
             height="50"
           />
         </a>
-        <a href="https://stackoverflow.com/users/5846191/alessio-prestileo">
+        <a href="https://stackoverflow.com/users/5846191/alessio-prestileo" target="_blank">
           <img
             class={styles.findMePicture}
             src="/240px-Stack_Overflow_icon.png"
@@ -56,7 +56,7 @@ export default component$(() => (
             height="50"
           />
         </a>
-        <a href="https://www.linkedin.com/in/alessioprestileoalep/">
+        <a href="https://www.linkedin.com/in/alessioprestileoalep/" target="_blank">
           <img
             class={styles.findMePicture}
             src="/In-Blue-96.png"
