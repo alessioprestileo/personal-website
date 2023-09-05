@@ -3,4 +3,5 @@
   --light-theme-button-background: #ffffff;
   --light-theme-background-gradient: linear-gradient(to right, rgba(246,113,177, .4) , rgba(244,218,127, .6));
   --base-spacing: 10px;
+  --color-border: #A0A0A0;
 }

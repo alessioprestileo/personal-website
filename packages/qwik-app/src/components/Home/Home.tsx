@@ -2,7 +2,7 @@ import { component$ } from '@builder.io/qwik';
 
 import styles from './home.module.css';
 
-export default component$(() => (
+export const Home = component$(() => (
   <div class={styles.page}>
     <div class={styles.top}>
       <div class={styles.preTitle}>
