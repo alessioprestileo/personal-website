@@ -1,4 +1,7 @@
 runtime: nodejs16
+env_variables:
+  GITHUB_SEARCH_CLIENT_ID: "XXX"
+  GITHUB_SEARCH_CLIENT_SECRET: "XXX"
 handlers:
   - url: /.*
     secure: always

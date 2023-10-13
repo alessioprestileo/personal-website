@@ -18,11 +18,15 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import compression from 'compression';
+import axios, { AxiosError } from 'axios';
+import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 
 declare global {
   interface QwikCityPlatform extends PlatformNode {}
 }
 
+dotenv.config();
 // Allow for dynamic port
 const PORT = process.env.PORT ?? 3000;
 
@@ -35,6 +39,8 @@ const app = express();
 
 // Enable gzip compression
 app.use(compression());
+
+app.use(cookieParser());
 
 // Directories where the static assets are located
 const distDir = join(fileURLToPath(import.meta.url), '..', '..', 'dist');
@@ -127,8 +133,50 @@ app.get(
 );
 
 // API routes
+const {GITHUB_SEARCH_CLIENT_ID, GITHUB_SEARCH_CLIENT_SECRET} = process.env;
+app.get('/api/github-search/callback', async (req, res) => {
+  const sessionCode = req.query.code;
+
+  try {
+    const result = await axios.post(
+      'https://github.com/login/oauth/access_token',
+      {
+        client_id: GITHUB_SEARCH_CLIENT_ID,
+        client_secret: GITHUB_SEARCH_CLIENT_SECRET,
+        code: sessionCode,
+      },
+      {
+        headers: {
+          Accept: 'application/json',
+        },
+      },
+    );
+    const accessToken = result.data.access_token;
+    res.cookie('github_search_access_token', accessToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'strict',
+    });
+    res.redirect('/projects/github-search?auth_status=login_successful');
+  } catch (caught: unknown) {
+    const error = caught as AxiosError;
+    console.error(
+      'Error fetching access token:',
+      JSON.stringify(error.response?.data),
+    );
+    res.status(500).send('Failed to fetch access token from GitHub.');
+  }
+});
+app.get('/api/github-search/search', async (req, res) => {
+  const accessToken = req.cookies.github_search_access_token;
+
+  if (!accessToken) {
+    return res.redirect(`/projects/github-search/logout?auth_status=access_token_not_found`);
+  }
+});
+
 app.get('/api', (_req, res) => {
-  res.send('🎉 Hello from api! 🎉');
+  res.send({data: '🎉 Hello from api! 🎉'});
 });
 
 // Use Qwik City's page and endpoint request handler
