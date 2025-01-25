@@ -1,3 +1,6 @@
 {
-  "extends": ["../../.eslintrc.json", "plugin:qwik/recommended"]
+  "extends": ["../../.eslintrc.json", "plugin:qwik/recommended"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  }
 }

@@ -3,5 +3,6 @@
   "compilerOptions": {
     "jsxImportSource": "@builder.io/qwik"
   },
-  "exclude": ["node_modules", "deploy", "dist", "public", "server"]
+  "exclude": ["node_modules", "deploy", "dist", "public", "server"],
+  "include": ["src", "scripts", "./*.d.ts", "./*.config.ts"]
 }

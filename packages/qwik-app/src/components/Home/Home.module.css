@@ -1,158 +1,159 @@
 @import '../../variables.css';
 
 .page {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
-    overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow-y: auto;
 }
 
 .top {
-    padding: 4vh 0 0 4vh;
-    font-weight: bold;
+  padding: 4vh 0 0 4vh;
+  font-weight: bold;
 }
 
 .preTitle {
-    display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-    line-height: 4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  line-height: 4rem;
 }
 
 .title {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .profilePicture {
-    display: grid;
-    align-items: center;
-    height: 2rem;
-    width: 2rem;
-    margin-right: var(--base-spacing);
+  display: grid;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  margin-right: var(--base-spacing);
 }
 
 .profilePicture img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 100%;
 }
 
 .middle {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .button {
-    width: 250px;
-    margin: calc(var(--base-spacing) * 2);
-    padding: var(--base-spacing);
-    border-radius: var(--base-spacing);
-    color: var(--light-theme-text-color);
-    font-size: 1rem;
-    text-decoration: none;
-    text-align: center;
-    background-color: var(--light-theme-button-background);
-    border: 1px solid lightgray;
+  width: 250px;
+  margin: calc(var(--base-spacing) * 2);
+  padding: var(--base-spacing);
+  border-radius: var(--base-spacing);
+  color: var(--light-theme-text-color);
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--light-theme-button-background);
+  border: 1px solid lightgray;
 }
 
-.button:hover, .button:focus-visible {
-    box-shadow: 3px 3px 5px -4px var(--light-theme-text-color);
+.button:hover,
+.button:focus-visible {
+  box-shadow: 3px 3px 5px -4px var(--light-theme-text-color);
 }
 
 .button:focus-visible {
-    outline: none;
+  outline: none;
 }
 
 .bottom {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 .bottomText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 3rem;
-    font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 3rem;
+  font-size: 1.25rem;
 }
 
 .findMe {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: calc(var(--base-spacing) * 2) 0;
-    margin-bottom: 5vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: calc(var(--base-spacing) * 2) 0;
+  margin-bottom: 5vh;
 }
 
 .findMePicture {
-    border-radius: 100%;
-    width: 50px;
+  border-radius: 100%;
+  width: 50px;
 }
 
 .findMeTag {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 768px) {
-    .preTitle {
-        display: flex;
-        align-items: center;
-        font-size: 3rem;
-        line-height: 6rem;
-    }
-    
-    .title {
-        font-size: 4rem;
-    }
-    
-    .profilePicture {
-        height: 4rem;
-        width: 4rem;
-    }
+  .preTitle {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    line-height: 6rem;
+  }
 
-    .bottomText {
-        line-height: 4rem;
-    }
+  .title {
+    font-size: 4rem;
+  }
+
+  .profilePicture {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .bottomText {
+    line-height: 4rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .preTitle {
-        display: flex;
-        align-items: center;
-        font-size: 4rem;
-        line-height: 8rem;
-    }
-    
-    .title {
-        font-size: 6rem;
-    }
+  .preTitle {
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+    line-height: 8rem;
+  }
 
-    .profilePicture {
-        height: 5rem;
-        width: 5rem;
-    }
+  .title {
+    font-size: 6rem;
+  }
 
-    .button {
-        width: 350px;
-        font-size: 2rem;
-        margin: calc(var(--base-spacing) * 3);
-        padding: calc(var(--base-spacing) * 1.5);
-        border-radius: calc(var(--base-spacing) * 1.5);
-    }
+  .profilePicture {
+    height: 5rem;
+    width: 5rem;
+  }
 
-    .bottomText {
-        line-height: 4rem;
-    }
+  .button {
+    width: 350px;
+    font-size: 2rem;
+    margin: calc(var(--base-spacing) * 3);
+    padding: calc(var(--base-spacing) * 1.5);
+    border-radius: calc(var(--base-spacing) * 1.5);
+  }
+
+  .bottomText {
+    line-height: 4rem;
+  }
 }

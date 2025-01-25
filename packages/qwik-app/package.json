@@ -3,7 +3,7 @@
   "description": "qwik-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run pre-build && qwik build && ts-node \"scripts/finalizeDeployDir.ts\"",
+    "build": "qwik build && ts-node \"scripts/finalizeDeployDir.ts\"",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/express/vite.config.ts",
@@ -13,16 +13,11 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\" \"scripts/**/*.ts*\"",
-    "pre-build": "ts-node \"scripts/copyReactBuild.ts\"",
     "preview": "qwik build preview && vite preview --open",
     "serve": "node server/entry.express",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
-  "devDependencies": {
-    "@builder.io/qwik-city": "*"
-  },
-  "dependencies": {
-    "react-app-frontend": "*"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
