@@ -1,6 +1,6 @@
 :root {
   --light-theme-text-color: #4d4d4d;
-  --light-theme-button-background: #ffffff;
+  --light-theme-button-background: rgba(255, 255, 255, 0.4);
   --light-theme-background-gradient: linear-gradient(
     to right,
     rgba(246, 113, 177, 0.4),

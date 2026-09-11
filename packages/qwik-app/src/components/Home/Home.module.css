@@ -50,20 +50,20 @@
 
 .button {
   width: 250px;
-  margin: calc(var(--base-spacing) * 2);
+  margin: var(--base-spacing);
   padding: var(--base-spacing);
   border-radius: var(--base-spacing);
   color: var(--light-theme-text-color);
   font-size: 1rem;
   text-decoration: none;
   text-align: center;
-  background-color: var(--light-theme-button-background);
-  border: 1px solid lightgray;
+  border: 1px solid var(--color-border);
 }
 
 .button:hover,
 .button:focus-visible {
   box-shadow: 3px 3px 5px -4px var(--light-theme-text-color);
+  background-color: var(--light-theme-button-background);
 }
 
 .button:focus-visible {
@@ -121,36 +121,6 @@
   .profilePicture {
     height: 4rem;
     width: 4rem;
-  }
-
-  .bottomText {
-    line-height: 4rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .preTitle {
-    display: flex;
-    align-items: center;
-    font-size: 4rem;
-    line-height: 8rem;
-  }
-
-  .title {
-    font-size: 6rem;
-  }
-
-  .profilePicture {
-    height: 5rem;
-    width: 5rem;
-  }
-
-  .button {
-    width: 350px;
-    font-size: 2rem;
-    margin: calc(var(--base-spacing) * 3);
-    padding: calc(var(--base-spacing) * 1.5);
-    border-radius: calc(var(--base-spacing) * 1.5);
   }
 
   .bottomText {

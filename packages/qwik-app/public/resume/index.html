@@ -1,65 +1,47 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 
 <head>
-  <title>Alessio Prestileo</title>
-  <meta name="description" content="Senior Frontend Engineer - Resume" />
+  <title>Alessio Prestileo - Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer - Resume" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/b3e6089feb.js" crossorigin="anonymous"></script>
-
   <style type="text/css">
-    body {
+    /* ATS-safe: semantic structure, single column, no icons, no images, no scripts.
+       Simple styling kept for human readability in a browser. */
+    :root {
+      /* Colors */
+      --color-text: #333;
+      --color-heading: #111;
+      --color-muted: #555;
+      --color-border: #aaa;
+      --color-link: #333;
+      /* Spacing (multiples of the 10px base spacing) */
       --base-spacing: 10px;
-      --color-text: #4d4d4d;
-      --color-border: #a0a0a0;
-      --color-green: #1fad1f;
-      --color-orange: #d99126;
-      --color-red: #d94a26;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      color: var(--color-text);
-      background-image: linear-gradient(to right,
-          rgba(246, 113, 177, 0.3),
-          rgba(244, 218, 127, 0.5));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      max-width: 1200px;
-      height: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    ul {
-      margin: 0;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      border-bottom: 1px solid var(--color-border);
-      line-height: 1.75rem;
-    }
-
-    p {
-      margin: 0;
-      padding: calc(1.25 * var(--base-spacing)) calc(1.25 * var(--base-spacing));
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    ul {
-      list-style-type: none;
-      margin-block-start: 0px;
-      margin-block-end: 0px;
-      padding-inline-start: 0px;
+      --spacing-page: calc(2.4 * var(--base-spacing));
+      --spacing-section: calc(2 * var(--base-spacing));
+      --spacing-small: calc(0.3 * var(--base-spacing));
+      --spacing-tiny: calc(0.2 * var(--base-spacing));
+      --spacing-list: calc(2 * var(--base-spacing));
+      --spacing-list-mobile: calc(1.8 * var(--base-spacing));
+      /* Typography */
+      --font-size-base: 20px;
+      --font-size-h1: 1.6rem;
+      --font-size-h1-mobile: 1.45rem;
+      --font-size-job-title: 1.1rem;
+      --font-size-h2: 1.15rem;
+      --font-size-h2-mobile: 1.1rem;
+      --font-size-h3: 1.05rem;
+      --font-size-meta: 0.9rem;
+      --font-size-body: 1rem;
+      --font-size-body-mobile: 0.95rem;
+      /* Layout */
+      --page-max-width: 850px;
+      --breakpoint-mobile: 600px;
+      --line-height: 1.45;
+      --line-height-contact: 1.6;
     }
 
     header {
@@ -86,6 +68,11 @@
       padding: var(--base-spacing);
     }
 
+    .home,
+    .download {
+      text-decoration: none;
+    }
+
     .home:hover,
     .download:hover {
       text-decoration: underline;
@@ -95,294 +82,160 @@
       opacity: 0;
     }
 
-    section#profile>p {
-      text-align: justify;
+    body {
+      background-image: linear-gradient(to right,
+          rgba(246, 113, 177, 0.3),
+          rgba(244, 218, 127, 0.5));
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--color-text);
+      line-height: var(--line-height);
+      font-size: var(--font-size-base);
+    }
+    main {
+      margin: 0 auto;
+      padding: var(--spacing-page);
+      max-width: var(--page-max-width);
     }
 
-    section#general-info {
-      padding-top: calc(1.5 * var(--base-spacing));
+    h1 {
+      font-size: var(--font-size-h1);
+      margin: 0 0 var(--spacing-tiny);
+      color: var(--color-heading);
     }
 
-    .title-container {
-      text-align: center;
+    .job-title {
+      font-size: var(--font-size-job-title);
+      margin: 0 0 calc(0.8 * var(--base-spacing));
+      font-weight: 600;
+      color: var(--color-text);
     }
 
-    .profile-picture-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+    .contact {
+      font-size: var(--font-size-meta);
+      margin: var(--spacing-tiny) 0 var(--spacing-section);
+      color: var(--color-muted);
     }
 
-    img.profile-picture {
-      border-radius: 100%;
-      border: 1px solid var(--color-border);
-      position: relative;
-      width: 90px;
-      height: 84px;
-      margin-top: var(--base-spacing);
+    .contact a {
+      color: var(--color-link);
+      text-decoration: none;
     }
 
-    img.profile-picture::before {
-      position: absolute;
-      top: 30%;
-      left: 25%;
+    h2 {
+      font-size: var(--font-size-h2);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: var(--spacing-tiny);
+      margin: var(--spacing-section) 0 calc(0.8 * var(--base-spacing));
+      color: var(--color-heading);
     }
 
-    .personal-data,
-    .personal-links {
-      line-height: 1.5rem;
-      text-align: left;
+    h3 {
+      font-size: var(--font-size-h3);
+      margin: calc(1.2 * var(--base-spacing)) 0 var(--spacing-tiny);
+      color: var(--color-heading);
     }
 
-    .container-2-col {
-      display: flex;
-      justify-content: center;
+    .meta {
+      font-size: var(--font-size-meta);
+      color: var(--color-muted);
+      margin-bottom: calc(0.6 * var(--base-spacing));
     }
 
-    .container-2-col-full-width {
-      display: flex;
+    ul {
+      margin: 0 0 var(--base-spacing);
+      padding-left: var(--spacing-list);
+      list-style-type: disc;
     }
 
-    .container-2-col.align-center {
-      align-items: center;
+    li {
+      margin-bottom: var(--spacing-tiny);
+      font-size: var(--font-size-body);
     }
 
-    .container-2-col>.left,
-    .container-2-col-full-width>.left {
-      padding-right: calc(2 * var(--base-spacing));
+    p {
+      font-size: var(--font-size-body);
+      margin: 0 0 calc(0.8 * var(--base-spacing));
     }
 
-    .container-2-col>.right,
-    .container-2-col-full-width>.right {
-      padding-left: calc(2 * var(--base-spacing));
-    }
-
-    .container-2-col-full-width>.left {
-      width: 35%;
-    }
-
-    .container-2-col-full-width>.right {
-      border-left: 1px solid;
-      width: 65%;
-    }
-
-    .work-experience-item {
-      margin: calc(1 * var(--base-spacing));
-      padding: calc(1 * var(--base-spacing));
-      box-shadow: 0px 0px 13px -5px var(--color-border);
-      background-color: #fcf4e8;
-    }
-
-    .employer {
-      padding-bottom: var(--base-spacing);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .employer .position-name {
-      display: flex;
-      align-items: center;
-    }
-
-    .employer>.right {
-      width: 50%;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .employer>.right>.item {
-      display: flex;
-      justify-content: space-between;
-      padding: calc(0.5 * var(--base-spacing)) calc(1.5 * var(--base-spacing));
-    }
-
-    .employer-name>i,
-    .dates>i,
-    .location>i {
-      padding-right: calc(0.25 * var(--base-spacing));
-    }
-
-    ul.achievements {
-      padding-left: calc(1.5 * var(--base-spacing));
-    }
-
-    section {
-      line-height: 1.5rem;
-      margin-bottom: calc(1.5 * var(--base-spacing));
-    }
-
-    section#professional-interests>ul,
-    section#education>ul {
-      padding: calc(1 * var(--base-spacing));
-    }
-
-    ul.achievements li:not(:last-child),
-    section#professional-interests>ul>li:not(:last-child),
-    section#education>ul>li:not(:last-child) {
-      margin-bottom: calc(1 * var(--base-spacing));
-    }
-
-    ul.achievements li,
-    section#professional-interests>ul>li,
-    section#education>ul>li {
-      position: relative;
-      padding-left: calc(2.5 * var(--base-spacing));
-    }
-
-    ul.achievements li::before,
-    section#professional-interests>ul>li::before,
-    section#education>ul>li::before {
-      content: '\f08d';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      position: absolute;
-      left: 0.35rem;
-      top: 0.1rem;
-      font-size: 0.7rem;
+    .competencies {
+      font-size: var(--font-size-body);
     }
 
     .education-item {
-      display: flex;
-      justify-content: space-between;
+      margin-bottom: var(--spacing-tiny);
+      font-size: var(--font-size-body);
     }
 
-    .education-item>.description {
-      max-width: 60%;
+    .education-item .details {
+      color: var(--color-muted);
     }
 
-    .education-item>.details {
-      display: flex;
-      align-items: center;
+    a {
+      color: var(--color-link);
     }
 
-    .education-item>.details>.location {
-      margin-right: calc(2 * var(--base-spacing));
+    table {
+      border-collapse: collapse;
     }
 
-    @media screen and (max-width: 1300px),
-    screen and (orientation: portrait) {
-      html {
-        font-size: 36px;
+    /* Screen-reader only label, not parsed as visual clutter */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    @media (max-width: var(--breakpoint-mobile)) {
+      body {
+        padding: calc(1.2 * var(--base-spacing));
       }
 
-      main {
-        margin: calc(4 * var(--base-spacing));
-        max-width: 100%;
+      h1 {
+        font-size: var(--font-size-h1-mobile);
       }
 
-      section#general-info {
-        padding-top: 0;
+      .job-title {
+        font-size: var(--font-size-body);
       }
 
-      img.profile-picture {
-        width: 135px;
-        height: 126px;
+      .contact {
+        font-size: var(--font-size-meta);
+        line-height: var(--line-height-contact);
       }
 
-      .container-2-col,
-      .container-2-col-full-width {
-        flex-direction: column;
+      h2 {
+        font-size: var(--font-size-h2-mobile);
       }
 
-      .container-2-col-full-width>.left,
-      .container-2-col-full-width>.right {
-        border: none;
-        padding: 0;
-        width: 100%;
+      h3 {
+        font-size: var(--font-size-h3);
       }
 
-      .container-2-col>.right {
-        padding-left: 0;
-      }
-
-      .container-2-col.portrait-reverse {
-        flex-direction: column-reverse;
-      }
-
-      .personal-data,
-      .personal-links {
-        text-align: center;
-      }
-
+      li,
+      p,
+      .competencies,
       .education-item {
-        flex-direction: column;
+        font-size: var(--font-size-body-mobile);
       }
 
-      .education-item>.description {
-        max-width: none;
-      }
-
-      .education-item>.details {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .work-experience-item {
-        padding: calc(1.5 * var(--base-spacing));
-      }
-
-      .employer {
-        padding-bottom: calc(1.5 * var(--base-spacing));
-        flex-direction: column;
-      }
-
-      .employer>.right {
-        width: 100%;
-        justify-content: flex-start;
-        font-size: 0.75rem;
-      }
-
-      .employer-name,
-      .dates,
-      .location {
-        display: flex;
-        align-items: center;
-      }
-
-      .employer-name>i,
-      .dates>i,
-      .location>i {
-        padding-right: calc(1 * var(--base-spacing));
-        font-size: 0.75rem;
-      }
-
-      ul.achievements li::before,
-      section#professional-interests>ul>li::before,
-      section#education>ul>li::before {
-        left: 0.15rem;
-        top: 0.02rem;
-      }
-
-      ul.achievements li,
-      section#professional-interests>ul>li,
-      section#education>ul>li {
-        padding-left: calc(3.5 * var(--base-spacing));
+      ul {
+        padding-left: var(--spacing-list-mobile);
       }
     }
 
     @media print {
-
-      body,
-      main {
-        padding: 0;
-      }
-
-      main {
-        max-width: none;
+      header {
+        display: none;
       }
 
       body {
         background-image: none;
       }
 
-      header {
-        display: none;
-      }
-
-      .work-experience-item {
-        box-shadow: none;
-        border: 2px solid #e8e8e8;
-        background-color: white;
+      main {
+        max-width: none;
       }
     }
   </style>
@@ -391,310 +244,131 @@
 <body>
   <header id="header">
     <a id="home" class="home" href="/"><i class="fas fa-chevron-left"></i> HOME</a>
-    <a id="download" class="download" href="/resume/Alessio_Prestileo-Senior_Frontend_Engineer-Resume.pdf">DOWNLOAD</a>
+    <a id="download" class="download" href="/resume/Alessio_Prestileo-Senior_Software_Engineer-Resume.pdf">DOWNLOAD</a>
   </header>
   <main>
-    <div class="container-2-col portrait-reverse align-center">
-      <div class="left">
-        <div class="profile-picture-container">
-          <img class="profile-picture" alt="avatar" src="/resume/Alessio_Prestileo_Resume.jpg" />
-        </div>
-      </div>
-      <div class="right">
-        <div class="title-container">
-          <h1 class="fulll-name">Alessio Prestileo</h1>
-          <h3 class="job-title">Senior Frontend Engineer</h3>
-        </div>
-      </div>
+    <h1>Alessio Prestileo</h1>
+    <h3 class="job-title">Senior Software Engineer</h3>
+
+    <div class="contact">
+      <span>Bend, OR 97702, USA</span> | <a href="mailto:alessioprestileo@gmail.com">alessioprestileo@gmail.com</a> | <a
+        href="tel:+14586004103">+1 458 600 4103</a> | <a
+        href="https://linkedin.com/in/alessioprestileoalep">linkedin.com/in/alessioprestileoalep</a> | <a
+        href="https://github.com/alessioprestileo">github.com/alessioprestileo</a> | <a
+        href="https://alessioprestileo.com">alessioprestileo.com</a>
     </div>
-    <section id="general-info">
-      <div class="container-2-col">
-        <div class="left">
-          <div class="personal-links">
-            <div>
-              <strong>LinkedIn:</strong>&nbsp;
-              <a href="https://linkedin.com/in/alessioprestileoalep"
-                target="_blank">https://linkedin.com/in/alessioprestileoalep</a>
-            </div>
-            <div>
-              <strong>GitHub:</strong>&nbsp;
-              <a href="https://github.com/alessioprestileo" target="_blank">https://github.com/alessioprestileo</a>
-            </div>
-            <div>
-              <strong>Website:</strong>&nbsp;
-              <a href="https://alessioprestileo.com" target="_blank">https://alessioprestileo.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="right">
-          <div class="personal-data">
-            <div>
-              <strong>E-mail:</strong>&nbsp;
-              <a href="mailto:alessioprestileo@gmail.com">alessioprestileo@gmail.com</a>
-            </div>
-            <div><strong>Mobile:</strong> +1 458 600 4103</div>
-            <div><strong>Location:</strong> Bend, OR 97702, USA</div>
-          </div>
-        </div>
-      </div>
-    </section>
+
     <section id="profile">
       <h2>Profile</h2>
-      <p>Senior Frontend Engineer with <strong>9 years</strong> of professional experience, specializing in
-        <strong>React, TypeScript,
-          and
-          scalable frontend architecture</strong>. Proven track record delivering high-quality web and mobile
-        applications,
-        mentoring engineers, and collaborating with product/design teams to build intuitive, performant solutions.
-        Experienced in both <strong>greenfield projects and legacy projects</strong>.
+      <p>Senior Software Engineer with 9+ years of professional experience, specializing in
+        React, TypeScript, and scalable frontend architecture.
+        Proven track record delivering high-quality web and mobile applications, mentoring engineers, and collaborating
+        with product/design teams to build intuitive, performant solutions.
+        Experienced in both greenfield projects and legacy projects, with a rigorous analytical
+        foundation from an initial career in computational structural engineering (numerical
+        simulation software in Python/C++).</p>
     </section>
-    <div class="container-2-col-full-width">
-      <div class="left">
-        <section id="core-competencies">
-          <h2>Core Competencies</h2>
-          <p>React · TypeScript · NodeJS · Modular Frontend Architecture · Design Systems · Scalable UI · Performance
-            Optimization ·
-            CI/CD ·
-            Automated Testing · Mentorship · Product Collaboration</p>
-        </section>
-      </div>
-      <div class="right">
-        <section id="professional-interests">
-          <div class="title">
-            <h2>Professional Interests</h2>
-          </div>
-          <ul>
-            <li>
-              Strongly typed functional languages: Haskell, PureScript and
-              Elm.
-            </li>
-            <li>
-              Modular Software Architecture: Attended “Master Class in Software Architecture” course taught by “Uncle
-              Bob” Martin.
-            </li>
-            <li>
-              Improving developer workflows through tooling, CI/CD, and coding conventions.
-            </li>
-          </ul>
-        </section>
-      </div>
-    </div>
-    <section id="education">
-      <div class="title">
-        <h2>Education</h2>
-      </div>
+
+    <section id="core-competencies">
+      <h2>Core Competencies</h2>
+      <p class="competencies">React · ReactNative · TypeScript · NodeJS · Modular Software Architecture · Design Systems
+        ·
+        Scalable UI · Performance Optimization · CI/CD · Automated Testing · Mentorship · Product Collaboration ·
+        Angular · Vue · Python · C++ · Haskell · PureScript · Elm</p>
+    </section>
+
+    <section id="technical-skills">
+      <h2>Technical Skills</h2>
       <ul>
-        <li>
-          <div class="education-item">
-            <div class="description">
-              M.S. Naval Architecture and Marine Engineering
-            </div>
-            <div class="details">
-              <div class="location">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>University of Genoa, Italy</span>
-              </div>
-              <div class="dates">
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-                <span>2011</span>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="education-item">
-            <div class="description">
-              B.S. Naval Architecture and Marine Engineering
-            </div>
-            <div class="details">
-              <div class="location">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>University of Genoa, Italy</span>
-              </div>
-              <div class="dates">
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-                <span>2008</span>
-              </div>
-            </div>
-          </div>
-        </li>
+        <li><strong>Languages:</strong> TypeScript, JavaScript (ES6+), Python, C++, HTML5, CSS3, Haskell, PureScript,
+          Elm</li>
+        <li><strong>Frontend &amp; Mobile:</strong> React, React Native, Angular, Vue, Design Systems, Responsive UI,
+          State Management</li>
+        <li><strong>Backend &amp; Architecture:</strong> Node.js, REST APIs, Modular Architecture, Micro-frontends,
+          Clean Architecture</li>
+        <li><strong>DevOps &amp; Testing:</strong> CI/CD (GitLab CI, GitHub Actions), Git, Jest, React Testing Library,
+          Webpack, Vite</li>
+        <li><strong>Leadership:</strong> Engineering Mentorship, Code Reviews, Technical Hiring (~50 interviews
+          conducted), Agile/Scrum</li>
       </ul>
     </section>
-    <section id="work-experience" class="work-experience">
+
+
+    <section id="work-experience">
       <h2>Work Experience</h2>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div class="left position-name">
-            <h3>Senior Software Engineer</h3>
-          </div>
-          <div class="right">
-            <div class="item">
-              <div class="dates">
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-                <span>2020-Present</span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="employer-name">
-                <i class="fa fa-building-o" aria-hidden="true"></i>
-                <span><a href="https://www.forsta.com" target="_blank">Forsta AS</a></span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="location">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>Oslo, Norway and remote, US</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ul class="achievements">
-          <li>Acted as the principal point of contact for <strong>TypeScript</strong> expertise,
-            shaping coding standards and mentoring colleagues.</li>
-          <li>
-            Contributed to the development and maintenance of a company-wide
-            <strong>design system</strong> counting ~50 UI components implemented
-            using <strong>React</strong>.
-          </li>
-          <li>
-            Improved types on 500k lines codebase, reducing <strong>runtime errors</strong> by 50%.
-          </li>
-          <li>
-            Built and delivered features <strong>end-to-end</strong>, collaborating with PMs and designers
-            to balance performance, maintainability, and product impact.
-          </li>
-          <li>
-            <strong>Mentored</strong> engineers, conducted code reviews, and established coding conventions
-            and internal tooling.
-          </li>
-          <li>
-            Enhanced <strong>CI/CD</strong> pipelines and code architecture, increasing automation
-            and reducing lifetime of merge requests by 50%.
-          </li>
-          <li>
-            Created coding challenges and assessed ~50 prospective candidates in technical interviews,
-            hiring 12 engineers in 2022.
-          </li>
+
+      <article>
+        <h3>Senior Software Engineer</h3>
+        <p class="meta">Forsta AS / Qualtrics &middot; 2020&ndash;Present (6 yrs)</p>
+        <ul>
+          <li>Served as the principal point of contact for TypeScript expertise:
+            authored coding standards, led architecture reviews, and mentored junior/mid-level engineers.</li>
+          <li>Co-engineered and scaled a company-wide design system (~50 UI components in React)
+            adopted across multiple engineering squads, standardizing UI patterns
+            and reducing frontend feature development time.</li>
+          <li>Spearheaded large-scale TypeScript refactoring across a 500k-LoC codebase,
+            eliminating un-typed boundaries and reducing runtime errors by 50%.</li>
+          <li>Revamped CI/CD pipelines and internal tooling, increasing test automation
+            and cutting merge request lifetime by 50%.</li>
+          <li>Built and delivered features end-to-end, partnering with PMs and designers
+            to balance performance, maintainability, and product impact.</li>
+          <li>Designed coding challenges, standardized evaluation rubrics, and assessed ~50 engineering
+            candidates in technical interviews.</li>
         </ul>
-      </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div class="left">
-            <h3>Senior Software Engineer / Frontend Lead</h3>
-          </div>
-          <div class="right">
-            <div class="item">
-              <div class="dates">
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-                <span>2018-2020</span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="employer-name">
-                <i class="fa fa-building-o" aria-hidden="true"></i>
-                <span><a href="https://www.zirius.no" target="_blank">Zirius AS</a></span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="location">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>Oslo, Norway</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ul class="achievements">
-          <li>
-            Developed an ERP web application and an expense claim mobile
-            app using <strong>React/ReactNative/TypeScript</strong>.
-          </li>
-          <li>
-            Implemented and maintained design system, coding conventions,
-            and deployment pipelines.
-          </li>
-          <li>
-            Mentored engineers, conducted code reviews, and led frontend team initiatives.
-          </li>
-          <li>
-            Conducted interviews, created coding challenges and home assignments to
-            assess prospective candidates.
-          </li>
+      </article>
+
+      <article>
+        <h3>Senior Software Engineer</h3>
+        <p class="meta">Zirius AS &middot; 2018&ndash;2020 (2 yrs)</p>
+        <ul>
+          <li>Developed an ERP web application and a cross-platform expense claim mobile app using
+            React, React Native, and TypeScript.</li>
+          <li>Implemented and maintained design system, coding conventions,
+            and automated CI/CD deployment pipelines.</li>
+          <li>Led frontend team initiatives, conducted code reviews, and mentored engineers.</li>
         </ul>
-      </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div class="left">
-            <h3>Software Engineer</h3>
-          </div>
-          <div class="right">
-            <div class="item">
-              <div class="dates">
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-                <span>2017-2018</span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="employer-name">
-                <i class="fa fa-building-o" aria-hidden="true"></i>
-                <span><a href="https://07.no/digital" target="_blank">07 Media AS</a></span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="location">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>Oslo, Norway</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ul class="achievements">
-          <li>
-            Developed and maintained websites using Angular, Vue, Drupal, and WordPress.
-          </li>
-          <li>
-            Key contributor to projects including
-            <a href="https://speiding.no" target="_blank">speiding.no</a>
-            and
-            <a href="https://norsktradisjonsmat.no" target="_blank">tradisjonsmat.no</a>
-          </li>
+      </article>
+
+      <article>
+        <h3>Software Engineer</h3>
+        <p class="meta">07 Media AS &middot; 2017&ndash;2018 (1 yr)</p>
+        <ul>
+          <li>Developed and maintained websites using Angular, Vue, Drupal, and WordPress.</li>
+          <li>Key contributor to production sites including speiding.no and tradisjonsmat.no.</li>
         </ul>
-      </div>
-      <div class="work-experience-item">
-        <div class="employer">
-          <div class="left">
-            <h3>Structural Engineer</h3>
-          </div>
-          <div class="right">
-            <div class="item">
-              <div class="dates">
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-                <span>2011-2016</span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="employer-name">
-                <i class="fa fa-building-o" aria-hidden="true"></i>
-                <span><a href="https://www.dnv.com" target="_blank">DNV</a></span>
-              </div>
-            </div>
-            <div class="item">
-              <div class="location">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>Oslo, Norway</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ul class="achievements">
-          <li>
-            Performed non-linear FE calculations to assess the ultimate
-            strength of marine structures.
-          </li>
-          <li>
-            Developed custom engineering software using Python and C++.
-          </li>
+      </article>
+
+      <article>
+        <h3>Structural Engineer</h3>
+        <p class="meta">DNV &middot; 2011&ndash;2016 (5 yrs)</p>
+        <ul>
+          <li>Performed non-linear finite element calculations to assess the ultimate
+            strength of marine structures.</li>
+          <li>Developed custom numerical simulation and non-linear finite element calculation software
+            using Python and C++.</li>
         </ul>
-      </div>
+      </article>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications &amp; Professional Development</h2>
+      <ul>
+        <li>Master Class in Software Architecture &mdash; taught by Robert C. Martin ("Uncle Bob")</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li class="education-item">
+          <strong>M.S. in Naval Architecture and Marine Engineering</strong>
+          <span class="details"> &mdash; University of Genoa, Italy &mdash; 2011</span>
+        </li>
+        <li class="education-item">
+          <strong>B.S. in Naval Architecture and Marine Engineering</strong>
+          <span class="details"> &mdash; University of Genoa, Italy &mdash; 2008</span>
+        </li>
+      </ul>
     </section>
   </main>
   <script src="/resume/scrollScript.js"></script>
